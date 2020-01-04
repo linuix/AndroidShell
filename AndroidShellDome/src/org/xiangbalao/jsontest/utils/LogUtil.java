@@ -19,12 +19,6 @@ package org.xiangbalao.jsontest.utils;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.http.NameValuePair;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.protocol.HTTP;
 import org.xiangbalao.androidshell.BuildConfig;
 
 import android.content.Context;
@@ -231,22 +225,22 @@ public class LogUtil {
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
-				try {
-					DefaultHttpClient httpClient = new DefaultHttpClient();
-					HttpPost httpPost = new HttpPost(mRemoteUrl);
-
-					List<NameValuePair> params = new ArrayList<NameValuePair>();
-					params.add(new BasicNameValuePair("package_name", mPackageName));
-					params.add(new BasicNameValuePair("package_version", mPackageVersion));
-					params.add(new BasicNameValuePair("phone_model", Build.MODEL));
-					params.add(new BasicNameValuePair("sdk_version", Build.VERSION.RELEASE));
-					params.add(new BasicNameValuePair("message", msg));
-
-					httpPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
-					httpClient.execute(httpPost);
-				}
-				catch (Exception e) {
-				}
+//				try {
+//					DefaultHttpClient httpClient = new DefaultHttpClient();
+//					HttpPost httpPost = new HttpPost(mRemoteUrl);
+//
+//					List<NameValuePair> params = new ArrayList<NameValuePair>();
+//					params.add(new BasicNameValuePair("package_name", mPackageName));
+//					params.add(new BasicNameValuePair("package_version", mPackageVersion));
+//					params.add(new BasicNameValuePair("phone_model", Build.MODEL));
+//					params.add(new BasicNameValuePair("sdk_version", Build.VERSION.RELEASE));
+//					params.add(new BasicNameValuePair("message", msg));
+//
+//					httpPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
+//					httpClient.execute(httpPost);
+//				}
+//				catch (Exception e) {
+//				}
 			}
 		}).start();
 	}

@@ -1,0 +1,3 @@
+include ':AndroidShell'
+include ':AndroidShellDome'
+include ':ApkShellUtil'
